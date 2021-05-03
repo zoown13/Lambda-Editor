@@ -1,0 +1,7 @@
+.c9/
+WildRydesStreamProcessor/chalice-env
+WildRydesStreamProcessor/WildRydesStreamProcessor/.chalice/deployments/
+WildRydesStreamProcessor/WildRydesStreamProcessor/.chalice/venv/
+WildRydesStreamProcessor/WildRydesStreamProcessor/__pycache__/app.cpython-37.pyc
+WildRydesStreamProcessor/WildRydesStreamProcessor/.chalice/deployed/dev.json
+WildRydesStreamProcessor/WildRydesStreamProcessor/.chalice/deployed/dev.json
