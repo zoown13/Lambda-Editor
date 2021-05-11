@@ -1,3 +1,14 @@
+'''
+This code is a Python3 version of index.js.
+There are several functions omitted and changed from index.js.
+1. No impelemetation of backoff algorithm.
+2. No use of dynamoDB.batchWrite(Substituted for table.put_item)
+
+You can surely save your data to DynamoDB without above functions.
+However, it cannot handle errors stemmed from the duration of saving and getting data.
+'''
+
+
 from decimal import Decimal
 from chalice import Chalice
 import base64
@@ -7,13 +18,8 @@ import json
 app = Chalice(app_name='WildRydesStreamProcessor')
 app.debug = True
 
-
-#def lambda_handler(event, context):
-#   buildRequestItems(event['Records'])
-    
-
-@app.on_kinesis_record(stream='wildrydes')
-def buildRequestItems(event):
+@app.on_kinesis_record(stream='wildrydes-summary')
+def WildRydesStreamProcessor_python(event):
     table = boto3.resource('dynamodb').Table('UnicornSensorData')
     
     for record in event:
